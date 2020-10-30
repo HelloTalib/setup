@@ -1,0 +1,666 @@
+{
+  "plugin_setup": {
+    "prefix": "pset",
+    "body": [
+      "/**",
+      "* Plugin Name: Elementor widget",
+      "* Plugin URI: https: //talib.netlify.com",
+      "* Description: Elementor Extension widget Series",
+      "* Version: 1.0.0",
+      "* Author: TALIB",
+      "* Author URI: https: //talib.netlify.com.com",
+      "* License: GPLv2 or later",
+      "* Text Domain: elementor-widget",
+      "* Domain Path: /languages/",
+      "*/"
+    ],
+    "description": "hello bangladesh"
+  },
+  "PHP_Comments": {
+    "prefix": "cmb",
+    "body": ["/**", " * ! $1", " */"],
+    "description": "PHP_Comments"
+  },
+  "Elementor_text": {
+    "prefix": "add_text",
+    "body": [
+      "add_control(",
+      "   '$1',",
+      "   [",
+      "       'label'       => __( '$2', '$3' ),",
+      "       'type'        => Controls_Manager::TEXT,",
+      "       'placeholder' => __( '$4', '$3' ),",
+      "   ]",
+      ");"
+    ],
+    "description": "Elementor Add Control Text"
+  },
+  "Elementor_Number": {
+    "prefix": "add_number",
+    "body": [
+      "add_control(",
+      "       '$1',",
+      "       [",
+      "           'label'     => __( '$2', '$3' ),",
+      "           'type'      => Controls_Manager::NUMBER,",
+      "           'min'       => $4,",
+      "           'max'       => $6,",
+      "           'step'      => $7,",
+      "           'default'   => $8,",
+      "       ]",
+      ");"
+    ],
+    "description": "Elementor_Number"
+  },
+  "Elementor_TextArea": {
+    "prefix": "add_textarea",
+    "body": [
+      "add_control(",
+      "           '$1',",
+      "           [",
+      "               'label'       => __( '$2', '$3' ),",
+      "               'type'        => Controls_Manager::TEXTAREA,",
+      "               'rows'        => $4,",
+      "               'default'     => __( '$5', '$3' ),",
+      "               'placeholder' => __( '$6', '$3' ),",
+      "           ]",
+      ");"
+    ],
+    "description": "Elementor_TextArea"
+  },
+  "Elementor_Select": {
+    "prefix": "add_select",
+    "body": [
+      "add_control(",
+      "           '$1',",
+      "           [",
+      "               'label'      => __( '$2', '$3' ),",
+      "               'type'       => Controls_Manager::SELECT,",
+      "               'default'    => 'solid',",
+      "               'options'    => [",
+      "                   'solid'  => __( 'Solid', '$3' ),",
+      "                   'dashed' => __( 'Dashed', '$3' ),",
+      "                   'dotted' => __( 'Dotted', '$3' ),",
+      "                   'double' => __( 'Double', '$3' ),",
+      "                   'none'   => __( 'None', '$3' ),",
+      "               ],",
+      "           ]",
+      ");"
+    ],
+    "description": "Elementor_Select"
+  },
+  "Elementor_Select2": {
+    "prefix": "add_select2",
+    "body": [
+      "add_control(",
+      "           '$1',",
+      "           [",
+      "               'label'           => __( '$2', '$3' ),",
+      "               'type'            => Controls_Manager::SELECT2,",
+      "               'multiple'        => $4,",
+      "               'options'         => [",
+      "                   'title'       => __( '$5', '$3' ),",
+      "                   'description' => __( '$6', '$3' ),",
+      "                   'button'      => __( '$7', '$3' ),",
+      "               ],",
+      "               'default'         => [ 'title', 'description' ],",
+      "           ]",
+      ");"
+    ],
+    "description": "Elementor_Select2"
+  },
+  "Elementor_Switcher": {
+    "prefix": "add_switcher",
+    "body": [
+      "add_control(",
+      "           '$1',",
+      "           [",
+      "               'label'         => __( '$2', '$3' ),",
+      "               'type'          => Controls_Manager::SWITCHER,",
+      "               'label_on'      => __( 'Show', '$4' ),",
+      "               'label_off'     => __( 'Hide', '$4' ),",
+      "               'return_value'  => 'yes',",
+      "               'default'       => 'yes',",
+      "           ]",
+      ");"
+    ],
+    "description": "Elementor_Switcher"
+  },
+  "Elementor_Button": {
+    "prefix": "add_button",
+    "body": [
+      "add_control(",
+      "           '$1',",
+      "           [",
+      "               'label'         => __( '$2', '$3' ),",
+      "               'type'          => Controls_Manager::BUTTON,",
+      "               'separator'     => 'before',",
+      "               'button_type'   => 'success',",
+      "               'text'          => __( '$4', '$3' ),",
+      "               'event'         => 'namespadd_e:editor:delete',",
+      "           ]",
+      ");"
+    ],
+    "description": "Elementor_Button"
+  },
+  "Elementor_Hidden": {
+    "prefix": "add_hidden",
+    "body": [
+      "add_control(",
+      "           '$1',",
+      "           [",
+      "               'label'     => __( '$2', '$3' ),",
+      "               'type'      => Controls_Manager::HIDDEN,",
+      "               'default'   => 'traditional',",
+      "           ]",
+      ");"
+    ],
+    "description": "Elementor_Hidden"
+  },
+  "Elementor_Heading": {
+    "prefix": "add_heading",
+    "body": [
+      "add_control(",
+      "           '$1',",
+      "           [",
+      "               'label'     => __( '$2', '$3' ),",
+      "               'type'      => Controls_Manager::HEADING,",
+      "               'separator' => 'before',",
+      "           ]",
+      ");"
+    ],
+    "description": "Elementor_Heading"
+  },
+  "Elementor_Raw_Html": {
+    "prefix": "add_rawhtml",
+    "body": [
+      "add_control(",
+      "           '$1',",
+      "           [",
+      "               'label'             => __( '$2', '$3' ),",
+      "               'type'              => Controls_Manager::RAW_HTML,",
+      "               'raw'               => __( 'A very important message to show in the panel.', '$3' ),",
+      "               'content_classes'   => '$4',",
+      "           ]",
+      ");"
+    ],
+    "description": "Elementor_Heading"
+  },
+  "Elementor_PopOver": {
+    "prefix": "add_popover",
+    "body": [
+      "add_control(",
+      "           '$1',",
+      "           [",
+      "               'label'         => __( '$2', '$3' ),",
+      "               'type'          => Controls_Manager::POPOVER_TOGGLE,",
+      "               'label_off'     => __( 'Default', 'your-plugin' ),",
+      "               'label_on'      => __( 'Custom', 'your-plugin' ),",
+      "               'return_value'  => 'yes',",
+      "               'default'       => 'yes',",
+      "           ]",
+      ");"
+    ],
+    "description": "Elementor_PopOver"
+  },
+  "Elementor_Choose": {
+    "prefix": "add_choose",
+    "body": [
+      "add_control(",
+      "           '$1',",
+      "           [",
+      "               'label'         => __( '$2', '$3' ),",
+      "               'type'          => Controls_Manager::CHOOSE,",
+      "               'options'       => [",
+      "                   'left'      => [",
+      "                       'title' => __( 'Left', '$3' ),",
+      "                       'icon'  => 'fa fa-align-left',",
+      "                   ],",
+      "                   'center'    => [",
+      "                       'title' => __( 'Center', '$3' ),",
+      "                       'icon'  => 'fa fa-align-center',",
+      "                   ],",
+      "                   'right'     => [",
+      "                       'title' => __( 'Right', '$3' ),",
+      "                       'icon'  => 'fa fa-align-right',",
+      "                   ],",
+      "               ],",
+      "               'default'       => 'center',",
+      "               'toggle'        => $4,",
+      "           ]",
+      ");",
+      ""
+    ],
+    "description": "Elementor_Choose"
+  },
+  "Elementor_Color": {
+    "prefix": "add_color",
+    "body": [
+      "add_control(",
+      "           '$1',",
+      "           [",
+      "               'label'     => __('$2', '$3' ),",
+      "               'type'      => Controls_Manager::COLOR,",
+      "               'scheme'    => [",
+      "                   'type'  => Scheme_Color::get_type(),",
+      "                   'value' => Scheme_Color::COLOR_$4,",
+      "               ],",
+      "               'selectors' => [",
+      "                   '{{WRAPPER}} $5' => 'color: {{VALUE}}',",
+      "               ],",
+      "           ]",
+      ");"
+    ],
+    "description": "Elementor_Color"
+  },
+  "Elementor_Media": {
+    "prefix": "add_media",
+    "body": [
+      "add_control(",
+      "           '$1',",
+      "           [",
+      "               'label'     => __( '$2', '$3' ),",
+      "               'type'      => Controls_Manager::MEDIA,",
+      "               'default'   => [",
+      "                   'url'   => Utils::get_placeholder_image_src(),",
+      "               ],",
+      "           ]",
+      ");"
+    ],
+    "description": "Elementor_Media"
+  },
+  "Elementor_Slider": {
+    "prefix": "add_slider",
+    "body": [
+      "add_control(",
+      "           '$1',",
+      "           [",
+      "               'label'         => __( '$2', '$3' ),",
+      "               'type'          => Controls_Manager::SLIDER,",
+      "               'size_units'    => [ 'px', '%'$4 ],",
+      "               'range'         => [",
+      "                   'px'        => [",
+      "                       'min'   => $5,",
+      "                       'max'   => $6,",
+      "                       'step'  => $7,",
+      "                   ],",
+      "                   '%'         => [",
+      "                       'min'   => $8,",
+      "                       'max'   => 100,",
+      "                   ],",
+      "               ],",
+      "               'default'       => [",
+      "                   'unit'      => '$9',",
+      "                   'size'      => $10,",
+      "               ],",
+      "               'selectors' => [",
+      "                   '{{WRAPPER}} $11' => 'width: {{SIZE}}{{UNIT}};',",
+      "               ],",
+      "           ]",
+      ");"
+    ],
+    "description": "Elementor_Slider"
+  },
+  "Elementor_Dimensions": {
+    "prefix": "add_dimensions",
+    "body": [
+      "add_control(",
+      "           '$1',",
+      "           [",
+      "               'label'                 => __( '$2', '$3' ),",
+      "               'type'                  => Controls_Manager::DIMENSIONS,",
+      "               'size_units'            => [ 'px', '%', 'em' ],",
+      "               'selectors'             => [",
+      "                   '{{WRAPPER}} $4'    => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',",
+      "               ],",
+      "           ]",
+      ");"
+    ],
+    "description": "Elementor_Dimensions"
+  },
+  "Elementor_Wysiwyg": {
+    "prefix": "add_wysiwyg",
+    "body": [
+      "add_control(",
+      "           '$1',",
+      "           [",
+      "               'label'         => __( '$2', '$3' ),",
+      "               'type'          => Controls_Manager::WYSIWYG,",
+      "               'default'       => __( '$4', '$3' ),",
+      "               'placeholder'   => __( '$5', '$3' ),",
+      "           ]",
+      ");"
+    ],
+    "description": "Elementor_Wysiwyg"
+  },
+  "Elementor_Code": {
+    "prefix": "add_code",
+    "body": [
+      "add_control(",
+      "           '$1',",
+      "           [",
+      "               'label'     => __( '$2', '$3' ),",
+      "               'type'      => Controls_Manager::CODE,",
+      "               'language'  => '$4',",
+      "               'rows'      => $5,",
+      "           ]",
+      ");"
+    ],
+    "description": "Elementor_Code"
+  },
+  "Elementor_Icon": {
+    "prefix": "add_icon",
+    "body": [
+      "add_control(",
+      "           '$1',",
+      "           [",
+      "               'label'     => __( '$2', '$3' ),",
+      "               'type'      => Controls_Manager::ICON,",
+      "               'include'   => [",
+      "                   'fa fa-facebook',",
+      "                   'fa fa-flickr',",
+      "                   'fa fa-google-plus',",
+      "                   'fa fa-instagram',",
+      "                   'fa fa-linkedin',",
+      "                   'fa fa-pinterest',",
+      "                   'fa fa-reddit',",
+      "                   'fa fa-twitch',",
+      "                   'fa fa-twitter',",
+      "                   'fa fa-vimeo',",
+      "                   'fa fa-youtube',",
+      "               ],",
+      "               'default'    => '$4',",
+      "           ]",
+      ");"
+    ],
+    "description": "Elementor_Icon"
+  },
+  "Elementor_Icons": {
+    "prefix": "add_icons",
+    "body": [
+      "add_control(",
+      "           '$1',",
+      "           [",
+      "               'label'         => __( '$2', '$3' ),",
+      "               'type'          => Controls_Manager::ICONS,",
+      "               'default'       => [",
+      "                   'value'     => '$4',",
+      "                   'library'   => 'solid',",
+      "               ],",
+      "           ]",
+      ");"
+    ],
+    "description": "Elementor_Icons"
+  },
+  "Elementor_Font": {
+    "prefix": "add_font",
+    "body": [
+      "add_control(",
+      "           'font_family',",
+      "           [",
+      "               'label'                 => __( 'Font Family', '$1' ),",
+      "               'type'                  => Controls_Manager::FONT,",
+      "               'default'               => \"'Open Sans', sans-serif\",",
+      "               'selectors'             => [",
+      "                   '{{WRAPPER}} $2'    => 'font-family: {{VALUE}}',",
+      "               ],",
+      "           ]",
+      ");"
+    ],
+    "description": "Elementor_Font"
+  },
+  "Elementor_DateTime": {
+    "prefix": "add_date",
+    "body": [
+      "add_control(",
+      "           '$1',",
+      "           [",
+      "               'label' => __( '$2', '$3' ),",
+      "               'type'  => Controls_Manager::DATE_TIME,",
+      "           ]",
+      ");"
+    ],
+    "description": "Elementor_DateTime"
+  },
+  "Elementor_Animation": {
+    "prefix": "add_animation",
+    "body": [
+      "add_control(",
+      "           '$1',",
+      "           [",
+      "               'label'         => __( '$2', '$3' ),",
+      "               'type'          => Controls_Manager::ANIMATION,",
+      "               'prefix_class'  => '$4 ',",
+      "           ]",
+      ");"
+    ],
+    "description": "Elementor_Animation"
+  },
+  "Elementor_HoverAnimation": {
+    "prefix": "add_hover_animation",
+    "body": [
+      "add_control(",
+      "           '$1',",
+      "           [",
+      "               'label'         => __( '$2', '$3' ),",
+      "               'type'          => Controls_Manager::HOVER_ANIMATION,",
+      "               'prefix_class'  => '$4',",
+      "           ]",
+      ");"
+    ],
+    "description": "Elementor_HoverAnimation"
+  },
+  "Elementor_Gallery": {
+    "prefix": "add_gallery",
+    "body": [
+      "add_control(",
+      "           '$1',",
+      "           [",
+      "               'label'     => __( '$2', '$3' ),",
+      "               'type'      => Controls_Manager::GALLERY,",
+      "               'default'   => [],",
+      "           ]",
+      ");"
+    ],
+    "description": "Elementor_Gallery"
+  },
+  "Elementor_Repeater_list": {
+    "prefix": "add_repeater_list",
+    "body": [
+      "add_control(",
+      "           '$1',",
+      "           [",
+      "               'label'         => __( '$2', '$3' ),",
+      "               'type'          => Controls_Manager::REPEATER,",
+      "               'fields'        => $repeater->get_controls(),",
+      "               'default'       => [",
+      "                   [",
+      "                       '$4'    => __( '$5', '$3' ),",
+      "                       '$6'    => __( '$7', '$3' ),",
+      "                   ],",
+      "               ],",
+      "               'title_field'   => '{{{ $4 }}}',",
+      "           ]",
+      ");"
+    ],
+    "description": "Elementor_Repeater_list"
+  },
+  "Elementor_URL": {
+    "prefix": "add_url",
+    "body": [
+      "add_control(",
+      "           '$1',",
+      "           [",
+      "               'label'             => __( '$2', '$3' ),",
+      "               'type'              => Controls_Manager::URL,",
+      "               'placeholder'       => __( '$4', '$3' ),",
+      "               'show_external'     => true,",
+      "               'default'           => [",
+      "                   'url'           => '',",
+      "                   'is_external'   => true,",
+      "                   'nofollow'      => true,",
+      "               ],",
+      "           ]",
+      ");"
+    ],
+    "description": "Elementor_URL"
+  },
+  "Elementor_ImageDimensions": {
+    "prefix": "add_image_dimensions",
+    "body": [
+      "add_control(",
+      "           '$1',",
+      "           [",
+      "               'label'         => __( '$2', '$3' ),",
+      "               'type'          => Controls_Manager::IMAGE_DIMENSIONS,",
+      "               'description'   => __( '$4', '$3' ),",
+      "               'default'       => [",
+      "                   'width'     => '$5',",
+      "                   'height'    => '$6',",
+      "               ],",
+      "           ]",
+      ");"
+    ],
+    "description": "Elementor_Image_Dimensions"
+  },
+  "Elementor_Divider": {
+    "prefix": "add_divider",
+    "body": [
+      "add_control(",
+      "           'hr',",
+      "           [",
+      "               'type' => Controls_Manager::DIVIDER,",
+      "           ]",
+      ");"
+    ],
+    "description": "Elementor_Divider"
+  },
+  "Elementor_Typography": {
+    "prefix": "add_typography",
+    "body": [
+      "add_group_control(",
+      "           Group_Control_Typography::get_type(),",
+      "           [",
+      "               'name'      => '$1',",
+      "               'label'     => __( '$2', '$3' ),",
+      "               'scheme'    => Scheme_Typography::TYPOGRAPHY_$4,",
+      "               'selector'  => '{{WRAPPER}} $5',",
+      "           ]",
+      ");",
+      ""
+    ],
+    "description": "Elementor_Typography"
+  },
+  "Elementor_Text_Shadow": {
+    "prefix": "add_text_shadow",
+    "body": [
+      "add_group_control(",
+      "           Group_Control_Text_Shadow::get_type(),",
+      "           [",
+      "               'name'      => '$1',",
+      "               'label'     => __( '$2', '$3' ),",
+      "               'selector'  => '{{WRAPPER}} $4',",
+      "           ]",
+      ");"
+    ],
+    "description": "Elementor_Text_Shadow"
+  },
+  "Elementor_Box_Shadow": {
+    "prefix": "add_box_shadow",
+    "body": [
+      "add_group_control(",
+      "           Group_Control_Box_Shadow::get_type(),",
+      "           [",
+      "               'name'      => '$1',",
+      "               'label'     => __( '$2', '$3' ),",
+      "               'selector'  => '{{WRAPPER}} $4',",
+      "           ]",
+      ");"
+    ],
+    "description": "Elementor_Box_Shadow"
+  },
+  "Elementor_Border": {
+    "prefix": "add_border",
+    "body": [
+      "add_group_control(",
+      "           Group_Control_Border::get_type(),",
+      "           [",
+      "               'name'      => '$1',",
+      "               'label'     => __( '$2', '$3' ),",
+      "               'selector'  => '{{WRAPPER}} $4',",
+      "           ]",
+      ");"
+    ],
+    "description": "Elementor_Border"
+  },
+  "Elementor_Background": {
+    "prefix": "add_background",
+    "body": [
+      "add_group_control(",
+      "           Group_Control_Background::get_type(),",
+      "           [",
+      "               'name'      => '$1',",
+      "               'label'     => __( '$2', '$3' ),",
+      "               'types'     => [ 'classic', 'gradient'],",
+      "               'selector'  => '{{WRAPPER}} $4',",
+      "           ]",
+      ");"
+    ],
+    "description": "Elementor_Background"
+  },
+  "Elementor_Image_Size": {
+    "prefix": "add_image_size",
+    "body": [
+      "add_group_control(",
+      "           Group_Control_Image_Size::get_type(),",
+      "           [",
+      "               'name'      => '$1',",
+      "               'exclude'   => [ 'custom', $2 ],",
+      "               'include'   => [$4],",
+      "               'default'   => '$4'",
+      "           ]",
+      ");"
+    ],
+    "description": "Elementor_Image_Size"
+  },
+  "Elementor_Section": {
+    "prefix": "add_section",
+    "body": [
+      "start_controls_section(",
+      "           '$1',",
+      "           [",
+      "               'label' => __( '$2', '$3' ),",
+      "               'tab'   => Controls_Manager::TAB_$4,",
+      "           ]",
+      ");",
+      "$this->",
+      "$this->end_controls_section();"
+    ],
+    "description": "Elementor_Section"
+  },
+  "Elementor_Tab": {
+    "prefix": "add_tab",
+    "body": [
+      "start_controls_tabs(",
+      "           '$1'",
+      ");",
+      "start_controls_tab(",
+      "           '$2',",
+      "           [",
+      "               'label' => __( '$3', '$4' ),",
+      "           ]",
+      ");",
+      "$this->",
+      "$this->end_controls_tab();",
+      "$this->end_controls_tabs();"
+    ],
+    "description": "Elementor_Tab"
+  },
+  "Elementor_Render_Image_Size": {
+    "prefix": "render_image_size",
+    "body": [
+      "echo Group_Control_Image_Size::get_attachment_image_html( $settings, 'thumbnail', 'image' );"
+    ],
+    "description": "Elementor_Render_Image_Size"
+  }
+}
